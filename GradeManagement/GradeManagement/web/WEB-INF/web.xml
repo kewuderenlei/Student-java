@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/errorPage/404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/errorPage/500.jsp</location>
+    </error-page>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 学生 -->
+    <servlet>
+        <servlet-name>StuInfoServlet</servlet-name>
+        <servlet-class>com.controller.StuInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StuInfoServlet</servlet-name>
+        <url-pattern>/student/index</url-pattern>
+    </servlet-mapping>
+
+    <!-- 课程 -->
+    <servlet>
+        <servlet-name>StuCourseServlet</servlet-name>
+        <servlet-class>com.controller.StuCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StuCourseServlet</servlet-name>
+        <url-pattern>/student/courses</url-pattern>
+    </servlet-mapping>
+
+    <!-- 成绩 -->
+    <servlet>
+        <servlet-name>StuScoreServlet</servlet-name>
+        <servlet-class>com.controller.StuScoreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StuScoreServlet</servlet-name>
+        <url-pattern>/student/score</url-pattern>
+    </servlet-mapping>
+
+    <!-- 选课 -->
+    <servlet>
+        <servlet-name>ClassCourseServlet</servlet-name>
+        <servlet-class>com.controller.ClassCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClassCourseServlet</servlet-name>
+        <url-pattern>/student/classCourse</url-pattern>
+        <url-pattern>/student/chooseCourse</url-pattern>
+        <url-pattern>/student/deleteCourse</url-pattern>
+    </servlet-mapping>
+
+    <!-- 教师 -->
+    <servlet>
+        <servlet-name>TeaInfoServlet</servlet-name>
+        <servlet-class>com.controller.TeaInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TeaInfoServlet</servlet-name>
+        <url-pattern>/teacher/index</url-pattern>
+    </servlet-mapping>
+
+    <!-- 任课 -->
+    <servlet>
+        <servlet-name>TeaCourseServlet</servlet-name>
+        <servlet-class>com.controller.TeaCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TeaCourseServlet</servlet-name>
+        <url-pattern>/teacher/courses</url-pattern>
+    </servlet-mapping>
+
+    <!-- 我的学生 -->
+    <servlet>
+        <servlet-name>MyStudentServlet</servlet-name>
+        <servlet-class>com.controller.MyStudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyStudentServlet</servlet-name>
+        <url-pattern>/teacher/myStudent</url-pattern>
+    </servlet-mapping>
+
+    <!-- 学生成绩 -->
+    <servlet>
+        <servlet-name>TeaScoreServlet</servlet-name>
+        <servlet-class>com.controller.TeaScoreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TeaScoreServlet</servlet-name>
+        <url-pattern>/teacher/score</url-pattern>
+    </servlet-mapping>
+
+    <!-- 成绩录入 -->
+    <servlet>
+        <servlet-name>MyStuInsertToScoreServlet</servlet-name>
+        <servlet-class>com.controller.MyStuToInsertScoreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyStuInsertToScoreServlet</servlet-name>
+        <url-pattern>/teacher/scoreInsert</url-pattern>
+    </servlet-mapping>
+
+    <!-- 成绩录入 -->
+    <servlet>
+        <servlet-name>InsertToScoreServlet</servlet-name>
+        <servlet-class>com.controller.InsertScoreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertToScoreServlet</servlet-name>
+        <url-pattern>/teacher/insertScore</url-pattern>
+    </servlet-mapping>
+
+    <!--管理员-->
+    <servlet>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <servlet-class>com.controller.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <url-pattern>/admin/index</url-pattern>
+    </servlet-mapping>
+
+    <!-- 专业管理 -->
+    <servlet>
+        <servlet-name>DepartmentServlet</servlet-name>
+        <servlet-class>com.controller.DepartmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DepartmentServlet</servlet-name>
+        <url-pattern>/admin/department/all</url-pattern>
+        <url-pattern>/admin/department/insert</url-pattern>
+        <url-pattern>/admin/department/delete</url-pattern>
+        <url-pattern>/admin/department/deleteSel</url-pattern>
+        <url-pattern>/admin/department/update</url-pattern>
+    </servlet-mapping>
+
+<!--    <servlet>-->
+<!--        <servlet-name>InsertDepartment</servlet-name>-->
+<!--        <servlet-class>com.controller.InsertDepartmentServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>InsertDepartment</servlet-name>-->
+<!--        <url-pattern>/admin/insertDepartment</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <!-- 班级管理 -->
+    <servlet>
+        <servlet-name>ClassServlet</servlet-name>
+        <servlet-class>com.controller.ClassServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClassServlet</servlet-name>
+        <url-pattern>/admin/class/all</url-pattern>
+        <url-pattern>/admin/class/insert</url-pattern>
+        <url-pattern>/admin/class/delete</url-pattern>
+        <url-pattern>/admin/class/deleteSel</url-pattern>
+        <url-pattern>/admin/class/update</url-pattern>
+    </servlet-mapping>
+
+<!--    <servlet>-->
+<!--        <servlet-name>InsertClassServlet</servlet-name>-->
+<!--        <servlet-class>com.controller.InsertClassServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>InsertClassServlet</servlet-name>-->
+<!--        <url-pattern>/admin/insertClass</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <!-- 学生管理 -->
+    <servlet>
+        <servlet-name>StudentServlet</servlet-name>
+        <servlet-class>com.controller.StudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentServlet</servlet-name>
+        <url-pattern>/admin/student/all</url-pattern>
+        <url-pattern>/admin/student/insert</url-pattern>
+    </servlet-mapping>
+
+<!--    <servlet>-->
+<!--        <servlet-name>InsertStudentServlet</servlet-name>-->
+<!--        <servlet-class>com.controller.InsertStudentServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>InsertStudentServlet</servlet-name>-->
+<!--        <url-pattern>/admin/insertStudent</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <!-- 教师管理 -->
+    <servlet>
+        <servlet-name>TeacherServlet</servlet-name>
+        <servlet-class>com.controller.TeacherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TeacherServlet</servlet-name>
+        <url-pattern>/admin/teacher/all</url-pattern>
+        <url-pattern>/admin/teacher/insert</url-pattern>
+    </servlet-mapping>
+
+<!--    <servlet>-->
+<!--        <servlet-name>insertTeacherServlet</servlet-name>-->
+<!--        <servlet-class>com.controller.InsertTeacherServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>insertTeacherServlet</servlet-name>-->
+<!--        <url-pattern>/admin/insertTeacher</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <!-- 成绩管理 -->
+    <servlet>
+        <servlet-name>ScoreServlet</servlet-name>
+        <servlet-class>com.controller.ScoreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ScoreServlet</servlet-name>
+        <url-pattern>/admin/score/all</url-pattern>
+    </servlet-mapping>
+
+    <!-- 课程管理 -->
+    <servlet>
+        <servlet-name>CourseServlet</servlet-name>
+        <servlet-class>com.controller.CourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CourseServlet</servlet-name>
+        <url-pattern>/admin/course/all</url-pattern>
+        <url-pattern>/admin/course/insert</url-pattern>
+    </servlet-mapping>
+
+<!--    <servlet>-->
+<!--        <servlet-name>InsertCourseServlet</servlet-name>-->
+<!--        <servlet-class>com.controller.InsertCourseServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>InsertCourseServlet</servlet-name>-->
+<!--        <url-pattern>/admin/insertCourse</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <!-- 开课 -->
+    <servlet>
+        <servlet-name>AdminClassCourseServlet</servlet-name>
+        <servlet-class>com.controller.AdminClassCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminClassCourseServlet</servlet-name>
+        <url-pattern>/admin/classCourse</url-pattern>
+    </servlet-mapping>
+
+<!--    <servlet>-->
+<!--        <servlet-name>InsertClassCourseServlet</servlet-name>-->
+<!--        <servlet-class>com.controller.InsertClassCourseServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>InsertClassCourseServlet</servlet-name>-->
+<!--        <url-pattern>/admin/insertClassCourse</url-pattern>-->
+<!--    </servlet-mapping>-->
+</web-app>
